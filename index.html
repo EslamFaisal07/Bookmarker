@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BookMark</title>
+    <link rel="icon" href="bookmark.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=PT+Sans+Caption:wght@400;700&family=Pacifico&family=Righteous&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body class="position-relative  pt-5">
+    <section>
+        <div class="container">
+            <h1 class="text-center  mb-4 "><span>Bookmarker</span> </h1>
+
+            <div class="row ">
+                <div class="col-md-12 text-center col-border mt-5 ">
+                    <div class="content mt-3 ">
+                        <h2 class="text-center mt-4"><i class="fa-solid fa-bookmark"></i> Bookmark your favorite sites
+                            <i class="fa-solid fa-bookmark"></i></h2>
+                        <div class="first d-flex flex-column  ">
+                            <label for="site-name" class="d-flex">
+                                <i class="fa-solid fa-book-bookmark p-2"></i>
+                                <p class="p-1">Site Name</p>
+
+                            </label>
+
+                            <input oninput="validateName()" type="text"
+                                class=" form-control site w-100  rounded-2  border-0 p-4 is-invalid focus" id="site-name"
+                                placeholder="Bookmark Name">
+                            <small id="alert-name" class="alert alert-danger d-none">Site name must contain at least 3
+                                characters .</small>
+                        </div>
+                    </div>
+                    <div class="first d-flex flex-column mt-4 ">
+                        <label for="site-name" class="d-flex">
+                            <i class="fa-solid fa-link p-2"></i>
+                            <p class="p-1">Site URL</p>
+
+                        </label>
+
+                        <input oninput="validateUrl()" type="text"
+                            class="site w-100  rounded-2 form-control  border-0 p-4 focus" id="site-url"
+                            placeholder="Website URL">
+                        <small id="alert-url" class="alert alert-danger d-none">Site URL must be a valid one .</small>
+
+                    </div>
+                    <button id="btn-submit" class="btn-add px-5 mt-4 mx-auto text-center text-white border-0 py-2 rounded-2 "
+                        onclick="addSite()">Submit</button>
+                        <button  id="btn-update"  class="d-none  btn btn-warning px-5 mt-4 mx-auto text-center text-black border-0 py-2 rounded-2 "
+                        onclick="updateData()">Update</button>
+                </div>
+            </div>
+            <input oninput="searchItem()" id="searchInput"   type="search" class="w-75 h-100 p-3 form-control  border-0 rounded-2 mt-3 m-auto focus" placeholder="Search By Website Name...">
+     
+
+            <div class="row ">
+                <div class="col-sm-12 ">
+                    <table class="table mt-4 text-center bg-light t-media">
+                        <thead class="table-media">
+                            <tr>
+                                <th class="text-capitalize th-media">index</th>
+                                <th class="text-capitalize th-media">Website Name</th>
+                                <th class="text-capitalize th-media">Visit</th>
+                                <th class="text-capitalize th-media">Update</th>
+                                <th class="text-capitalize th-media">Delete</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="demo">
+
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="container ">
+        <div class="row ">
+        <div class="col-sm-12 ">
+        <div onclick=" closeModal()" id="bg-close"
+            class="box-info position-fixed start-0 top-0 w-100  h-100 d-flex justify-content-center align-items-center bg-black bg-opacity-50 d-none ">
+            <div class="modal-content bg-white  shadow-lg rounded-2 p-4 ">
+                <div class="modal-header d-flex justify-content-between my-3 top-50 start-50">
+                    <p class="modal-title fs-5" id="exampleModalLabel"><i
+                            class="fa-solid fa-circle mx-1  text-danger"></i><i
+                            class="fa-solid fa-circle mx-1  text-warning"></i><i
+                            class="fa-solid fa-circle mx-1  text-success"></i></p>
+                    <button onclick=" closeModal()" type="button" class="btn-close fw-bold" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <h3 class="mb-4 fw-lighter ">Site Name or Url is not valid, Please follow the rules below :</h3>
+                    <h5 class="fw-light m-2 my-3 "><i class="fa-regular fa-circle-right text-danger mx-2"></i>Site name
+                        must contain at least 3 characters .</h5>
+                    <h5 class="fw-lighter m-2 my-3"><i class="fa-regular fa-circle-right text-danger mx-2"></i>Site URL
+                        must be a valid one .</h5>
+
+                </div>
+            </div>
+            </div>
+        </div>
+
+        </div>
+        </div>
+
+    </section>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/index.js"></script>
+</body>
+
+</html>

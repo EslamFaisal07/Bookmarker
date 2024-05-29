@@ -1,0 +1,113 @@
+body {
+    background-color: #F7ECDE;
+    font-family: PT Sans Caption;
+}
+
+::selection {
+    background-color: #FEC260;
+
+}
+
+.col-border{
+    border-bottom: dotted 2px;
+    border-top: dotted 2px;
+    padding-bottom: 30px;
+}
+
+
+
+h1 span{
+    font-family: Pacifico, cursive;
+    font-size: 50px;
+    font-weight: 500;
+    line-height: 60px;
+    position: relative;
+    z-index: 0;
+    
+
+}
+
+h1 span::after{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 20%;
+    background-color: #FEC260;
+    left: 0;
+    bottom: 20%;
+    z-index: -1;
+    transition: all 0.5s;
+}
+h1 span:hover::after {
+    height: 45%;
+
+}
+
+.content h2 {
+    font-family: "Righteous", sans-serif;
+    font-weight: 500;
+    font-size: 25px;
+    background-image: linear-gradient(to right, #3ca55c,#ffc107e8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+}
+
+input {
+    height: 20px;
+}
+
+.focus:focus {
+    
+    color: #212529;
+    background-color: #fff;
+    border-color: #d99c39;
+    outline: 0;
+    box-shadow: 0 0 0 0.25rem #fec26055;
+}
+
+.btn-add {
+    background-color: #CF4F2C;
+}
+
+
+.modal-content{
+    width: 30%;
+ 
+
+}
+@media (max-width:992px){
+    .modal-content{
+        width:75%;
+    }
+}
+@media (max-width:767px){
+    .modal-content{
+        width:100%;
+    }
+    .content h2 {
+       
+        font-size: 20px;
+        
+    
+    }
+    .btn-delete{
+        padding: 3px;
+    }
+    .btn-visit{
+        padding: 3px;
+
+    }
+    .update-btn{
+        padding: 3px;
+    }
+    
+    #searchInput{
+        width: 100%;
+    }
+ 
+}
+
+
+
+
